@@ -1,0 +1,87 @@
+<div fxLayout fxLayoutAlign="center center" class="full-w container-margin mat-title">
+  <a style="cursor: pointer" fxLayoutAlign="center center" (click)="exportexcel()">
+    Download
+    <mat-icon> cloud_download</mat-icon>
+  </a>
+</div>
+
+<table mat-table [dataSource]="datasource" class="mat-elevation-z8 full-w" id="not-joining-reason">
+    <ng-container matColumnDef="reason">
+      <th mat-header-cell *matHeaderCellDef> Reason </th>
+      <td mat-cell *matCellDef="let element"> {{element.reason}} </td>
+    </ng-container>
+    <ng-container matColumnDef="other_reason">
+        <th mat-header-cell *matHeaderCellDef> Other Reason </th>
+        <td mat-cell *matCellDef="let element"> {{element.other_reason}}</td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<br>
+<table mat-table [dataSource]="datasource1" class="mat-elevation-z8 full-w" id="reg-details">
+  <ng-container matColumnDef="trial_id">
+    <th mat-header-cell *matHeaderCellDef>Trial_ID</th>
+    <td mat-cell *matCellDef="let element"> {{element.trial_id}} </td>
+  </ng-container>
+  <ng-container matColumnDef="date_of_birth">
+      <th mat-header-cell *matHeaderCellDef> DOB </th>
+      <td mat-cell *matCellDef="let element"> {{element.date_of_birth}}</td>
+  </ng-container>
+  <ng-container matColumnDef="gender">
+    <th mat-header-cell *matHeaderCellDef> Gender </th>
+    <td mat-cell *matCellDef="let element"> {{element.gender}}</td>
+  </ng-container>
+  <ng-container matColumnDef="class">
+    <th mat-header-cell *matHeaderCellDef> Class </th>
+    <td mat-cell *matCellDef="let element"> {{element.class}}</td>
+  </ng-container>
+  <ng-container matColumnDef="division">
+    <th mat-header-cell *matHeaderCellDef> Division </th>
+    <td mat-cell *matCellDef="let element"> {{element.division}}</td>
+  </ng-container>
+  <ng-container matColumnDef="stream">
+    <th mat-header-cell *matHeaderCellDef> Stream </th>
+    <td mat-cell *matCellDef="let element"> {{element.stream}}</td>
+  </ng-container>
+  <ng-container matColumnDef="guardian_name">
+    <th mat-header-cell *matHeaderCellDef> Guardian Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.guardian_name}}</td>
+  </ng-container>
+  
+  <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+</table>
+<br>
+<table mat-table [dataSource]="datasource2" class="mat-elevation-z8 full-w" id="eligibility-questions">
+  <ng-container matColumnDef="participant_id">
+    <th mat-header-cell *matHeaderCellDef>Participant ID</th>
+    <td mat-cell *matCellDef="let element"> {{element.participant_id}} </td>
+  </ng-container>
+  <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef> DOB </th>
+      <td mat-cell *matCellDef="let element"> {{element.date}}</td>
+  </ng-container>
+  <ng-container matColumnDef="full_name">
+    <th mat-header-cell *matHeaderCellDef> Full Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.full_name}}</td>
+  </ng-container>
+  <ng-container matColumnDef="I am currently enrolled in class 9-12th">
+    <th mat-header-cell *matHeaderCellDef> I am currently enrolled in class 9-12th </th>
+    <td mat-cell *matCellDef="let element"> {{element['I am currently enrolled in class 9-12th']}}</td>
+  </ng-container>
+  <ng-container matColumnDef="I am between 12-20 years old">
+    <th mat-header-cell *matHeaderCellDef> I am between 12-20 years old </th>
+    <td mat-cell *matCellDef="let element"> {{element['I am between 12-20 years old']}}</td>
+  </ng-container>
+  <ng-container matColumnDef="I can understand and read English or Hindi">
+    <th mat-header-cell *matHeaderCellDef> I can understand and read English or Hindi </th>
+    <td mat-cell *matCellDef="let element"> {{element['I can understand and read English or Hindi']}}</td>
+  </ng-container>
+  <ng-container matColumnDef="phone_number">
+    <th mat-header-cell *matHeaderCellDef> Phone Number </th>
+    <td mat-cell *matCellDef="let element"> {{element.phone_number}}</td>
+  </ng-container>
+  
+  <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+</table>
